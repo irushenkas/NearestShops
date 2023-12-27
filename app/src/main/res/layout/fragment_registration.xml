@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RegistrationFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/beige">
+
+        <TextView
+            android:id="@+id/toolBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registration"
+            android:textColor="@color/brown"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/emailBlock"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/emailLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="E-mail"
+            android:textColor="@color/brown"/>
+
+        <EditText
+            android:id="@+id/emailField"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_text_field"
+            android:padding="5dp"
+            android:textColor="@color/brown"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/passwordBlock"
+        app:layout_constraintTop_toBottomOf="@id/emailBlock"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/passwordLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Password"
+            android:textColor="@color/brown"/>
+
+        <EditText
+            android:id="@+id/passwordField"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_text_field"
+            android:padding="5dp"
+            android:textColor="@color/brown"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/passwordConfirmBlock"
+        app:layout_constraintTop_toBottomOf="@id/passwordBlock"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/passwordConfirmLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="Confirm password"
+            android:textColor="@color/brown"/>
+
+        <EditText
+            android:id="@+id/passwordConfirmField"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_text_field"
+            android:padding="5dp"
+            android:textColor="@color/brown"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/registerBtn"
+        app:layout_constraintTop_toBottomOf="@id/passwordConfirmBlock"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="20dp"
+        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:background="@drawable/bg_button"
+        android:text="Register"
+        android:textColor="@color/beige"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

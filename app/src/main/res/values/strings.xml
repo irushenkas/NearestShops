@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NearestShops</string>
+    <string name="login_error">Login error</string>
+    <string name="register_error">Register error</string>
+</resources>
