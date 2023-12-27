@@ -17,18 +17,19 @@ class LoginViewModel @Inject constructor(
     private val repository: AuthRepository,
 ) : ViewModel() {
 
+    val token = MutableLiveData<String>()
+
     fun signIn(login: String, password: String) = viewModelScope.launch {
         try {
             val authState = repository.signIn(login, password)
 
-//            if(authState.token != null) {
-//                auth.setAuth(authState.id, authState.token)
-//            } else {
-//                showErrorMessage(R.string.login_error)
-//            }
+            if(authState.token != null) {
+                token.value = authState.token.toString()
+            } else {
+                showErrorMessage(R.string.login_error)
+            }
         } catch (e: Exception) {
             showErrorMessage(R.string.login_error)
-            e.printStackTrace()
         }
     }
 
@@ -40,14 +41,13 @@ class LoginViewModel @Inject constructor(
 
             val authState = repository.signUp(email, password)
 
-//            if(authState.token != null) {
-//                auth.setAuth(authState.id, authState.token)
-//            } else {
-//                showErrorMessage(R.string.register_error)
-//            }
+            if(authState.token != null) {
+                token.value = authState.token.toString()
+            } else {
+                showErrorMessage(R.string.login_error)
+            }
         } catch (e: Exception) {
             showErrorMessage(R.string.register_error)
-            e.printStackTrace()
         }
     }
 
@@ -55,5 +55,4 @@ class LoginViewModel @Inject constructor(
         Toast.makeText(context, text, Toast.LENGTH_LONG)
             .show()
     }
-
 }

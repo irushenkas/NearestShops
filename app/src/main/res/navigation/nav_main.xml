@@ -23,6 +23,9 @@
         android:name="com.example.nearestshops.activity.RegistrationFragment"
         android:label="fragment_registration"
         tools:layout="@layout/fragment_registration">
+        <action
+            android:id="@+id/action_registrationFragment_to_locationsFragment"
+            app:destination="@id/locationsFragment" />
     </fragment>
 
     <fragment
@@ -30,5 +33,16 @@
         android:name="com.example.nearestshops.activity.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_locationsFragment"
+            app:destination="@id/locationsFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/locationsFragment"
+        android:name="com.example.nearestshops.activity.LocationsFragment"
+        android:label="fragment_locations"
+        tools:layout="@layout/fragment_locations">
+    </fragment>
+
 </navigation>

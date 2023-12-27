@@ -24,10 +24,8 @@ class AuthRepositoryImpl @Inject constructor(
             }
             return response.body() ?: throw ApiError(response.code(), response.message())
         } catch (e: IOException) {
-            e.printStackTrace()
             throw NetworkError
         } catch (e: Exception) {
-            e.printStackTrace()
             throw UnknownError
         }
     }
