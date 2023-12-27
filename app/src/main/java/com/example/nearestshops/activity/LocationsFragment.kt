@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.nearestshops.R
 import com.example.nearestshops.adapter.LocationsAdapter
 import com.example.nearestshops.adapter.OnLocationsInteractionListener
 import com.example.nearestshops.databinding.FragmentLocationsBinding
@@ -35,7 +37,7 @@ class LocationsFragment : Fragment() {
                 }
                 val bundle = Bundle()
                 bundle.putLong("location", location.id)
-                //findNavController().navigate(R.id.action_authorJobsFragment_to_editAuthorJobFragment, bundle)
+                findNavController().navigate(R.id.action_locationsFragment_to_menuFragment, bundle)
             }
         })
 

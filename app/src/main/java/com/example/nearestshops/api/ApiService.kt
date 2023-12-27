@@ -39,7 +39,7 @@ interface ApiService {
     suspend fun getLocations(): Response<List<Location>>
 
     @GET("location/{id}/menu")
-    suspend fun getMenu(@Path("id") id: Long): Response<Menu>
+    suspend fun getMenu(@Path("id") id: Long): Response<List<Menu>>
 
     data class AuthState(val id: Long = 0, val token: String? = null)
 }

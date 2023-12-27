@@ -43,6 +43,16 @@
         android:name="com.example.nearestshops.activity.LocationsFragment"
         android:label="fragment_locations"
         tools:layout="@layout/fragment_locations">
+        <action
+            android:id="@+id/action_locationsFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.nearestshops.activity.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu">
     </fragment>
 
 </navigation>
