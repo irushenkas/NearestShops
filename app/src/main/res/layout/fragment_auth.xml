@@ -12,7 +12,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/beige">
+        android:background="@color/beige_light">
 
         <TextView
             android:id="@+id/toolBarTitle"
@@ -34,7 +34,7 @@
         android:layout_width="match_parent"
         android:background="@drawable/bg_button"
         android:text="Login"
-        android:textColor="@color/beige"/>
+        android:textColor="@color/beige_light"/>
 
     <Button
         android:id="@+id/register"
@@ -45,7 +45,7 @@
         android:layout_width="match_parent"
         android:background="@drawable/bg_button"
         android:text="Register"
-        android:textColor="@color/beige"/>
+        android:textColor="@color/beige_light"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

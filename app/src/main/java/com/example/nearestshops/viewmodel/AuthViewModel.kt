@@ -1,9 +1,10 @@
-package ru.netology.nmedia.viewmodel
+package com.example.nearestshops.viewmodel
 
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.*
 import com.example.nearestshops.R
+import com.example.nearestshops.auth.AppAuth
 import com.example.nearestshops.repository.AuthRepository
 import kotlinx.coroutines.launch
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,6 +16,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     @ApplicationContext private val context: Context,
     private val repository: AuthRepository,
+    private val auth: AppAuth
 ) : ViewModel() {
 
     val token = MutableLiveData<String>()
@@ -24,6 +26,7 @@ class LoginViewModel @Inject constructor(
             val authState = repository.signIn(login, password)
 
             if(authState.token != null) {
+                auth.setAuth(authState.id, authState.token)
                 token.value = authState.token.toString()
             } else {
                 showErrorMessage(R.string.login_error)
@@ -42,6 +45,7 @@ class LoginViewModel @Inject constructor(
             val authState = repository.signUp(email, password)
 
             if(authState.token != null) {
+                auth.setAuth(authState.id, authState.token)
                 token.value = authState.token.toString()
             } else {
                 showErrorMessage(R.string.login_error)

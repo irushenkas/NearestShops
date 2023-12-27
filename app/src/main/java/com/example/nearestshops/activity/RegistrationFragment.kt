@@ -11,7 +11,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.nearestshops.R
 import com.example.nearestshops.databinding.FragmentRegistrationBinding
 import dagger.hilt.android.AndroidEntryPoint
-import ru.netology.nmedia.viewmodel.LoginViewModel
+import com.example.nearestshops.viewmodel.LoginViewModel
 
 @AndroidEntryPoint
 class RegistrationFragment : Fragment() {

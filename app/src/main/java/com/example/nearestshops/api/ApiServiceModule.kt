@@ -1,5 +1,6 @@
 package com.example.nearestshops.api
 
+import com.example.nearestshops.auth.AppAuth
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,8 +12,9 @@ import javax.inject.Singleton
 object ApiServiceModule {
     @Provides
     @Singleton
-    fun provideApiService(): ApiService {
-        return retrofit(okhttp()).create(ApiService::class.java)
+    fun provideApiService(auth: AppAuth): ApiService {
+        return retrofit(okhttp(authInterceptor(auth)))
+            .create(ApiService::class.java)
     }
 
 }

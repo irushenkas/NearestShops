@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.example.nearestshops.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
-import ru.netology.nmedia.viewmodel.LoginViewModel
+import com.example.nearestshops.viewmodel.LoginViewModel
 
 import com.example.nearestshops.R
 

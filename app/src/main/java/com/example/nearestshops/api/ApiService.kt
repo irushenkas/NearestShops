@@ -3,6 +3,7 @@ package com.example.nearestshops.api
 import com.example.nearestshops.BuildConfig
 import com.example.nearestshops.dto.Location
 import com.example.nearestshops.dto.Menu
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Response
 import retrofit2.Retrofit
@@ -12,7 +13,13 @@ import retrofit2.http.*
 
 private const val BASE_URL = "${BuildConfig.BASE_URL}/"
 
-fun okhttp(): OkHttpClient = OkHttpClient.Builder().build()
+fun okhttp(vararg interceptors: Interceptor): OkHttpClient = OkHttpClient.Builder()
+    .apply {
+        interceptors.forEach {
+            this.addInterceptor(it)
+        }
+    }
+    .build()
 
 fun retrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
     .addConverterFactory(GsonConverterFactory.create())

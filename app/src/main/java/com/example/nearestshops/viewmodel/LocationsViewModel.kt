@@ -1,7 +1,9 @@
-package ru.netology.nmedia.viewmodel
+package com.example.nearestshops.viewmodel
 
 import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.*
+import com.example.nearestshops.R
 import com.example.nearestshops.dto.Location
 import com.example.nearestshops.repository.LocationsRepository
 import kotlinx.coroutines.launch
@@ -20,9 +22,13 @@ class LocationsViewModel @Inject constructor(
     fun loadLocations() = viewModelScope.launch {
         try {
             data.value = repository.getAll()
-            val test = 123
         } catch (e: Exception) {
-            e.printStackTrace()
+            showErrorMessage(R.string.locations_error)
         }
+    }
+
+    private fun showErrorMessage(text: Int) {
+        Toast.makeText(context, text, Toast.LENGTH_LONG)
+            .show()
     }
 }

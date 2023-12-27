@@ -9,7 +9,7 @@ import java.io.IOException
 import javax.inject.Inject
 
 class LocationsRepositoryImpl @Inject constructor(
-    private val apiService: ApiService,
+    private val apiService: ApiService
 ) : LocationsRepository {
 
     override suspend fun getAll(): List<Location> {
@@ -20,12 +20,10 @@ class LocationsRepositoryImpl @Inject constructor(
             }
 
             val body: List<Location> = response.body() ?: throw ApiError(response.code(), response.message())
-
             return body
         } catch (e: IOException) {
             throw NetworkError
         } catch (e: Exception) {
-            e.printStackTrace()
             throw UnknownError
         }
     }
