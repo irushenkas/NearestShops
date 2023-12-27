@@ -1,5 +1,7 @@
 package com.example.nearestshops.activity
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,14 +9,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
+import com.example.nearestshops.adapter.LocationsAdapter
+import com.example.nearestshops.adapter.OnLocationsInteractionListener
 import com.example.nearestshops.databinding.FragmentLocationsBinding
 import com.example.nearestshops.databinding.FragmentLoginBinding
+import com.example.nearestshops.dto.Location
 import dagger.hilt.android.AndroidEntryPoint
+import ru.netology.nmedia.viewmodel.LocationsViewModel
 import ru.netology.nmedia.viewmodel.LoginViewModel
 
 @AndroidEntryPoint
 class LocationsFragment : Fragment() {
+    private val viewModel: LocationsViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,6 +36,24 @@ class LocationsFragment : Fragment() {
             false
         )
 
+        val adapter = LocationsAdapter(this.context, object : OnLocationsInteractionListener {
+            override fun onSelect(location: Location) {
+                if(location == null) {
+                    return
+                }
+                val bundle = Bundle()
+                bundle.putLong("location", location.id)
+                //findNavController().navigate(R.id.action_authorJobsFragment_to_editAuthorJobFragment, bundle)
+            }
+        })
+
+        binding.list.adapter = adapter
+
+        viewModel.loadLocations()
+
+        viewModel.data.observe(viewLifecycleOwner) { locations ->
+            adapter.submitList(locations)
+        }
 
         return binding.root
     }
