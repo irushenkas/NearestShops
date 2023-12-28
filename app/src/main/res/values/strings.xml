@@ -3,4 +3,6 @@
     <string name="login_error">Login error</string>
     <string name="register_error">Register error</string>
     <string name="locations_error">Error getting locations</string>
+    <string name="cart_add_error">Error add to cart</string>
+    <string name="cart_remove_error">Error remove from cart</string>
 </resources>

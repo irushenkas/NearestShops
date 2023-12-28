@@ -42,10 +42,24 @@ class MenuViewHolder(
             if(menu.imageURL != null) {
                 Picasso.get().load(menu.imageURL).into(image)
             }
+            count.text = menu.count.toString()
 
-//            card.setOnClickListener {
-//                onInteractionListener.onSelect(menu)
-//            }
+            add.setOnClickListener {
+                menu.count++
+                count.text = menu.count.toString()
+
+                onInteractionListener.onAdd(menu)
+            }
+
+            remove.setOnClickListener {
+                if(menu.count == 0) {
+                    return@setOnClickListener
+                }
+                menu.count--
+                count.text = menu.count.toString()
+
+                onInteractionListener.onRemove(menu)
+            }
         }
     }
 }

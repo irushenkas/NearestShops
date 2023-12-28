@@ -31,20 +31,25 @@ class MenuFragment : Fragment() {
         )
 
         val adapter = MenuAdapter(this.context, object : OnMenuInteractionListener {
-//            override fun onSelect(menu: Menu) {
-//                if(menu == null) {
-//                    return
-//                }
-//                //val bundle = Bundle()
-//                //bundle.putLong("menu", menu.id)
-//                //findNavController().navigate(R.id.action_authorJobsFragment_to_editAuthorJobFragment, bundle)
-//            }
+            override fun onAdd(menu: Menu) {
+                if(menu == null) {
+                    return
+                }
+                viewModel.addToCart(menu)
+            }
+
+            override fun onRemove(menu: Menu) {
+                if(menu == null) {
+                    return
+                }
+                viewModel.removeFromCart(menu)
+            }
         })
 
         binding.list.adapter = adapter
 
         val locationId = arguments?.getLong("location")
-        if(locationId!= null) {
+        if(locationId != null) {
             viewModel.loadMenu(locationId)
         }
 

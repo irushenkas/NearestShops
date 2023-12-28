@@ -27,6 +27,22 @@ class MenuViewModel @Inject constructor(
         }
     }
 
+    fun addToCart(menu: Menu) {
+        try {
+            repository.add(menu)
+        } catch (e: Exception) {
+            showErrorMessage(R.string.cart_add_error)
+        }
+    }
+
+    fun removeFromCart(menu: Menu) {
+        try {
+            repository.remove(menu)
+        } catch (e: Exception) {
+            showErrorMessage(R.string.cart_remove_error)
+        }
+    }
+
     private fun showErrorMessage(text: Int) {
         Toast.makeText(context, text, Toast.LENGTH_LONG)
             .show()
