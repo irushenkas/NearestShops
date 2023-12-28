@@ -18,7 +18,7 @@
             android:id="@+id/toolBarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Registration"
+            android:text="@string/register"
             android:textColor="@color/brown"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="E-mail"
+            android:text="@string/email"
             android:textColor="@color/brown"/>
 
         <EditText
@@ -47,7 +47,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_text_field"
-            android:padding="5dp"
+            android:padding="10dp"
             android:textColor="@color/brown"/>
     </LinearLayout>
 
@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Password"
+            android:text="@string/password"
             android:textColor="@color/brown"/>
 
         <EditText
@@ -73,7 +73,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_text_field"
-            android:padding="5dp"
+            android:padding="10dp"
             android:textColor="@color/brown"/>
     </LinearLayout>
 
@@ -91,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="Confirm password"
+            android:text="@string/confirm_password"
             android:textColor="@color/brown"/>
 
         <EditText
@@ -99,7 +99,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_text_field"
-            android:padding="5dp"
+            android:padding="10dp"
             android:textColor="@color/brown"/>
     </LinearLayout>
 
@@ -111,7 +111,7 @@
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:background="@drawable/bg_button"
-        android:text="Register"
+        android:text="@string/register"
         android:textColor="@color/beige_light"/>
 
 

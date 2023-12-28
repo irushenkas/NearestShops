@@ -18,7 +18,7 @@
             android:id="@+id/toolBarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cart"
+            android:text="@string/title_cart"
             android:textColor="@color/brown"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:text="Thanks"
+        android:text="@string/thanks_text"
         android:textColor="@color/brown"
         android:textSize="30sp"
         android:textStyle="bold" />
@@ -65,7 +65,7 @@
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:background="@drawable/bg_button"
-        android:text="Pay"
+        android:text="@string/pay"
         android:textColor="@color/beige_light"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,18 @@
 <resources>
-    <string name="app_name">Food order</string>
+    <string name="app_name">Ближайшие кофейни</string>
+    <string name="title_auth">Вход</string>
+    <string name="login">Логин</string>
+    <string name="sign_in">Войти</string>
+    <string name="register">Регистрация</string>
+    <string name="password">Пароль</string>
+    <string name="confirm_password">Повторите пароль</string>
+    <string name="email">E-mail</string>
+    <string name="title_locations">Ближайшие кофейни</string>
+    <string name="title_menu">Меню</string>
+    <string name="to_cart">Перейти к оплате</string>
+    <string name="title_cart">Ваш заказ</string>
+    <string name="thanks_text">Время ожидания заказа 15 минут! Спасибо, что выбрали нас!</string>
+    <string name="pay">Оплатить</string>
     <string name="login_error">Login error</string>
     <string name="register_error">Register error</string>
     <string name="locations_error">Error getting locations</string>

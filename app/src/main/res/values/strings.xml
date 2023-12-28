@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">NearestShops</string>
+    <string name="title_auth">Authentication</string>
+    <string name="login">Login</string>
+    <string name="sign_in">Sign in</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="email">E-mail</string>
+    <string name="title_locations">Locations</string>
+    <string name="title_menu">Menu</string>
+    <string name="to_cart">To cart</string>
+    <string name="title_cart">Your order</string>
+    <string name="thanks_text">Thanks</string>
+    <string name="pay">Pay</string>
     <string name="login_error">Login error</string>
     <string name="register_error">Register error</string>
     <string name="locations_error">Error getting locations</string>
