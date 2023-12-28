@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MenuFragment">
+    tools:context=".activity.CartFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,7 +18,7 @@
             android:id="@+id/toolBarTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Menu"
+            android:text="Cart"
             android:textColor="@color/brown"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -26,12 +26,11 @@
     </androidx.appcompat.widget.Toolbar>
 
     <LinearLayout
-        android:id="@+id/menuBlock"
+        android:id="@+id/locationsBlock"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp" >
+        android:layout_height="wrap_content">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
@@ -39,20 +38,20 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            app:spanCount="2" />
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/card_cart" />
 
     </LinearLayout>
 
     <Button
-        android:id="@+id/cartBtn"
+        android:id="@+id/payBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="20dp"
         android:layout_height="40dp"
         android:layout_width="match_parent"
         android:background="@drawable/bg_button"
-        android:text="Cart"
+        android:text="Pay"
         android:textColor="@color/beige_light"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

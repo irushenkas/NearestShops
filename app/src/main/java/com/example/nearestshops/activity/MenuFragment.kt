@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.nearestshops.R
 import com.example.nearestshops.adapter.MenuAdapter
 import com.example.nearestshops.adapter.OnMenuInteractionListener
-import com.example.nearestshops.databinding.FragmentLocationsBinding
+import com.example.nearestshops.databinding.FragmentMenuBinding
 import com.example.nearestshops.dto.Menu
 import dagger.hilt.android.AndroidEntryPoint
 import com.example.nearestshops.viewmodel.MenuViewModel
@@ -22,21 +24,21 @@ class MenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentLocationsBinding.inflate(
+        val binding = FragmentMenuBinding.inflate(
             inflater,
             container,
             false
         )
 
         val adapter = MenuAdapter(this.context, object : OnMenuInteractionListener {
-            override fun onSelect(menu: Menu) {
-                if(menu == null) {
-                    return
-                }
-                //val bundle = Bundle()
-                //bundle.putLong("menu", menu.id)
-                //findNavController().navigate(R.id.action_authorJobsFragment_to_editAuthorJobFragment, bundle)
-            }
+//            override fun onSelect(menu: Menu) {
+//                if(menu == null) {
+//                    return
+//                }
+//                //val bundle = Bundle()
+//                //bundle.putLong("menu", menu.id)
+//                //findNavController().navigate(R.id.action_authorJobsFragment_to_editAuthorJobFragment, bundle)
+//            }
         })
 
         binding.list.adapter = adapter
@@ -48,6 +50,10 @@ class MenuFragment : Fragment() {
 
         viewModel.data.observe(viewLifecycleOwner) { menu ->
             adapter.submitList(menu)
+        }
+
+        binding.cartBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_cartFragment)
         }
 
         return binding.root

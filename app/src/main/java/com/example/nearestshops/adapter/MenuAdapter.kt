@@ -8,9 +8,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.nearestshops.databinding.CardMenuBinding
 import com.example.nearestshops.dto.Menu
+import com.squareup.picasso.Picasso
 
 interface OnMenuInteractionListener {
-    fun onSelect(menu: Menu) {}
+    fun onAdd(menu: Menu) {}
+    fun onRemove(menu: Menu) {}
 }
 
 class MenuAdapter(private val context: Context?, private val onInteractionListener: OnMenuInteractionListener
@@ -34,10 +36,16 @@ class MenuViewHolder(
     fun bind(menu: Menu) {
         binding.apply {
             name.text = menu.name
-
-            card.setOnClickListener {
-                onInteractionListener.onSelect(menu)
+            if(menu.price != null) {
+                price.text = menu.price.toString()
             }
+            if(menu.imageURL != null) {
+                Picasso.get().load(menu.imageURL).into(image)
+            }
+
+//            card.setOnClickListener {
+//                onInteractionListener.onSelect(menu)
+//            }
         }
     }
 }

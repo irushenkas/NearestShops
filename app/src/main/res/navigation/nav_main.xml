@@ -53,6 +53,16 @@
         android:name="com.example.nearestshops.activity.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_cartFragment"
+            app:destination="@id/cartFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.example.nearestshops.activity.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart">
     </fragment>
 
 </navigation>
