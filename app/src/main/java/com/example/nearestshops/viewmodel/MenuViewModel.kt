@@ -18,6 +18,7 @@ class MenuViewModel @Inject constructor(
 ) : ViewModel() {
 
     val data = MutableLiveData<List<Menu>>()
+    val selectedData = MutableLiveData<List<Menu>>()
 
     fun loadMenu(locationId: Long) = viewModelScope.launch {
         try {
@@ -40,6 +41,14 @@ class MenuViewModel @Inject constructor(
             repository.remove(menu)
         } catch (e: Exception) {
             showErrorMessage(R.string.cart_remove_error)
+        }
+    }
+
+    fun getCart() {
+        try {
+            selectedData.value = repository.getCart()
+        } catch (e: Exception) {
+            showErrorMessage(R.string.cart_show_error)
         }
     }
 
